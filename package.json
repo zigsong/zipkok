@@ -1,7 +1,7 @@
 {
   "name": "danjjak",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "index.tsx",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -29,15 +29,20 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
+    "react-native-gesture-handler": "^2.1.0",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.8.0",
-    "react-native-web": "0.17.1"
+    "react-native-web": "0.17.1",
+    "react-navigation": "^4.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@types/expo": "^33.0.1",
+    "@types/jest": "^27.0.3",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.64.12",
+    "@types/react-navigation": "^3.4.0",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
