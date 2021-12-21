@@ -1,13 +1,17 @@
-const PALETTE = {
+export default {
   violet: {
-    400: '#7C5983',
+    vintage_400: '#DFDAE0',
+    vintage_500: 'rgba(107, 86, 171, 0.09)',
+    tint_400: '#7C5983',
   },
   white: {
     bg_400: 'rgba(255, 255, 255, 0.59)',
   },
   grey: {
-    400: '#AAAAAA',
+    text_400: '#AAAAAA',
+  },
+  black: {
+    text_300: '#333333',
+    text_700: '#777777',
   },
 };
-
-export default PALETTE;

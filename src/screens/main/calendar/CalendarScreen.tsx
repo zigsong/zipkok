@@ -1,25 +1,28 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
+import { ThemedView } from 'components/Themed';
+import BaseLayout from 'components/BaseLayout';
+import { BoldText, LightText } from 'components/StyledText';
 
 const CalendarScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>캘린더</Text>
-      <Text style={styles.subtitle}>우리 같이 노는날</Text>
-    </SafeAreaView>
+    <ThemedView style={styles.container}>
+      <BaseLayout>
+        <BoldText style={styles.title}>캘린더</BoldText>
+        <LightText style={styles.subtitle}>우리 같이 노는날</LightText>
+      </BaseLayout>
+    </ThemedView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
+    paddingVertical: 24,
   },
   title: {
     textAlign: 'center',
-    fontWeight: 'bold',
   },
   subtitle: {
     textAlign: 'center',

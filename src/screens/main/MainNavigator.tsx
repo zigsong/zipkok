@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Pressable, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { BoldText } from 'components/StyledText';
@@ -41,7 +41,7 @@ const TabBarIcon = ({ route, focused }: TabBarIconProps) => {
       <Image source={focused ? route.activeIcon : route.defautlIcon} />
       <BoldText
         style={{
-          color: focused ? PALETTE.violet[400] : PALETTE.grey[400],
+          color: focused ? PALETTE.violet.tint_400 : PALETTE.grey.text_400,
           ...styles.tabBarText,
         }}
       >
@@ -78,9 +78,9 @@ const styles = StyleSheet.create({
   tabBar: {
     position: 'absolute',
     backgroundColor: PALETTE.white.bg_400,
-    borderRadius: 25,
+    borderRadius: 24,
     borderTopWidth: 0,
-    height: 96,
+    height: 88,
   },
   tabBarIcon: {
     alignItems: 'center',
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     top: 10,
   },
   tabBarText: {
-    marginTop: 6,
+    marginTop: 4,
   },
 });
 

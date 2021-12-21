@@ -1,21 +1,25 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
+import { ThemedView } from 'components/Themed';
+import BaseLayout from 'components/BaseLayout';
+import { BoldText, LightText } from 'components/StyledText';
 
 const DiaryScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>교환일기</Text>
-      <Text style={styles.subtitle}>우리만의 비밀 일기장</Text>
-    </SafeAreaView>
+    <ThemedView style={styles.container}>
+      <BaseLayout>
+        <BoldText style={styles.title}>교환일기</BoldText>
+        <LightText style={styles.subtitle}>우리만의 비밀 일기장</LightText>
+      </BaseLayout>
+    </ThemedView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
+    paddingVertical: 24,
   },
   title: {
     textAlign: 'center',
