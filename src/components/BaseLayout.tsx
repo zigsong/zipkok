@@ -8,17 +8,20 @@ interface Props {
 }
 
 const BaseLayout = ({ children }: Props) => {
-  return <View style={styles.container}>{children}</View>;
+  return (
+    <View style={styles.container}>
+      <View>{children}</View>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
-    borderTopLeftRadius: 36,
-    borderTopRightRadius: 36,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
     backgroundColor: PALETTE.violet.vintage_500,
-    top: 100,
   },
 });
 

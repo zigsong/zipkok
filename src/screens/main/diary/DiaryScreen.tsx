@@ -1,16 +1,17 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
 import { ThemedView } from 'components/Themed';
 import BaseLayout from 'components/BaseLayout';
-import { BoldText, LightText } from 'components/StyledText';
+import BaseHeader from 'components/BaseHeader';
+import PALETTE from 'styles/palette';
 
 const DiaryScreen = () => {
   return (
     <ThemedView style={styles.container}>
+      <BaseHeader title="교환일기" subtitle="우리만의 비밀 일기장" />
       <BaseLayout>
-        <BoldText style={styles.title}>교환일기</BoldText>
-        <LightText style={styles.subtitle}>우리만의 비밀 일기장</LightText>
+        <Text>내용</Text>
       </BaseLayout>
     </ThemedView>
   );
@@ -19,14 +20,15 @@ const DiaryScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 24,
+    paddingTop: 48,
   },
   title: {
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontSize: 32,
   },
   subtitle: {
     textAlign: 'center',
+    color: PALETTE.violet.tint_400,
   },
 });
 

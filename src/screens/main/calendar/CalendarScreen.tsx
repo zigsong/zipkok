@@ -1,16 +1,17 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
 import { ThemedView } from 'components/Themed';
 import BaseLayout from 'components/BaseLayout';
-import { BoldText, LightText } from 'components/StyledText';
+import BaseHeader from 'components/BaseHeader';
+import PALETTE from 'styles/palette';
 
 const CalendarScreen = () => {
   return (
     <ThemedView style={styles.container}>
+      <BaseHeader title="캘린더" subtitle="우리 같이 노는날" />
       <BaseLayout>
-        <BoldText style={styles.title}>캘린더</BoldText>
-        <LightText style={styles.subtitle}>우리 같이 노는날</LightText>
+        <Text>내용</Text>
       </BaseLayout>
     </ThemedView>
   );
@@ -19,13 +20,15 @@ const CalendarScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 24,
+    paddingTop: 48,
   },
   title: {
     textAlign: 'center',
+    fontSize: 32,
   },
   subtitle: {
     textAlign: 'center',
+    color: PALETTE.violet.tint_400,
   },
 });
 

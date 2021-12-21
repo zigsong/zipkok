@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Text as DefaultText, View as DefaultView } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 import PALETTE from 'styles/palette';
 
@@ -24,6 +23,7 @@ export function TintedText(props: TextProps) {
 export function ThemedView(props: ViewProps) {
   const { style, ...otherProps } = props;
   const backgroundColor = PALETTE.violet.vintage_400;
+  // const backgroundColor = '#000000';
 
-  return <SafeAreaView style={[{ backgroundColor }, style]} {...otherProps} />;
+  return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
 }
