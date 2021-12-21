@@ -5,10 +5,19 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BoldText } from 'components/StyledText';
 import calendarIcon from 'assets/images/tabbar-calendar.png';
 import calendarActiveIcon from 'assets/images/tabbar-calendar-active.png';
+import gohereIcon from 'assets/images/tabbar-gohere.png';
+import gohereActiveIcon from 'assets/images/tabbar-gohere-active.png';
 import diaryIcon from 'assets/images/tabbar-diary.png';
 import diaryActiveIcon from 'assets/images/tabbar-diary-active.png';
+import albumIcon from 'assets/images/tabbar-album.png';
+import albumActiveIcon from 'assets/images/tabbar-album-active.png';
+import friendsInfoIcon from 'assets/images/tabbar-friends-info.png';
+import friendsInfoActiveIcon from 'assets/images/tabbar-friends-info-active.png';
 import CalendarScreen from './calendar/CalendarScreen';
+import GoHereScreen from './gohere/GoHereScreen';
 import DiaryScreen from './diary/DiaryScreen';
+import AlbumScreen from './album/AlbumScreen';
+import FriendsInfoScreen from './friendsInfo/FriendsInfoScreen';
 import PALETTE from 'styles/palette';
 
 const routes = [
@@ -20,11 +29,32 @@ const routes = [
     screen: CalendarScreen,
   },
   {
+    name: 'gohere',
+    title: '여기가자',
+    defautlIcon: gohereIcon,
+    activeIcon: gohereActiveIcon,
+    screen: GoHereScreen,
+  },
+  {
     name: 'diary',
     title: '교환일기',
     defautlIcon: diaryIcon,
     activeIcon: diaryActiveIcon,
     screen: DiaryScreen,
+  },
+  {
+    name: 'album',
+    title: '앨범',
+    defautlIcon: albumIcon,
+    activeIcon: albumActiveIcon,
+    screen: AlbumScreen,
+  },
+  {
+    name: 'friendsInfo',
+    title: '친구정보',
+    defautlIcon: friendsInfoIcon,
+    activeIcon: friendsInfoActiveIcon,
+    screen: FriendsInfoScreen,
   },
 ];
 
@@ -81,6 +111,7 @@ const styles = StyleSheet.create({
     borderRadius: 24,
     borderTopWidth: 0,
     height: 88,
+    paddingHorizontal: 12,
   },
   tabBarIcon: {
     alignItems: 'center',
@@ -89,6 +120,7 @@ const styles = StyleSheet.create({
   },
   tabBarText: {
     marginTop: 4,
+    fontSize: 12,
   },
 });
 
