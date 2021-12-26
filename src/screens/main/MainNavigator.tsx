@@ -13,11 +13,11 @@ import albumIcon from 'assets/images/tabbar-album.png';
 import albumActiveIcon from 'assets/images/tabbar-album-active.png';
 import friendsInfoIcon from 'assets/images/tabbar-friends-info.png';
 import friendsInfoActiveIcon from 'assets/images/tabbar-friends-info-active.png';
-import CalendarScreen from './calendar/CalendarScreen';
-import GoHereScreen from './gohere/GoHereScreen';
-import DiaryScreen from './diary/DiaryScreen';
-import AlbumScreen from './album/AlbumScreen';
-import FriendsInfoScreen from './friendsInfo/FriendsInfoScreen';
+import Calendar from './calendar';
+import GoHere from './gohere';
+import Diary from './diary';
+import Album from './album';
+import FriendsInfo from './friendsInfo';
 import PALETTE from 'styles/palette';
 
 const routes = [
@@ -26,35 +26,35 @@ const routes = [
     title: '캘린더',
     defautlIcon: calendarIcon,
     activeIcon: calendarActiveIcon,
-    screen: CalendarScreen,
+    screen: Calendar,
   },
   {
     name: 'gohere',
     title: '여기가자',
     defautlIcon: gohereIcon,
     activeIcon: gohereActiveIcon,
-    screen: GoHereScreen,
+    screen: GoHere,
   },
   {
     name: 'diary',
     title: '교환일기',
     defautlIcon: diaryIcon,
     activeIcon: diaryActiveIcon,
-    screen: DiaryScreen,
+    screen: Diary,
   },
   {
     name: 'album',
     title: '앨범',
     defautlIcon: albumIcon,
     activeIcon: albumActiveIcon,
-    screen: AlbumScreen,
+    screen: Album,
   },
   {
     name: 'friendsInfo',
     title: '친구정보',
     defautlIcon: friendsInfoIcon,
     activeIcon: friendsInfoActiveIcon,
-    screen: FriendsInfoScreen,
+    screen: FriendsInfo,
   },
 ];
 

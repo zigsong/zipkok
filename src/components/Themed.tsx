@@ -23,7 +23,6 @@ export function TintedText(props: TextProps) {
 export function ThemedView(props: ViewProps) {
   const { style, ...otherProps } = props;
   const backgroundColor = PALETTE.violet.vintage_400;
-  // const backgroundColor = '#000000';
 
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
 }

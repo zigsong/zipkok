@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
+import 'react-native-gesture-handler';
 import { ThemeProvider } from 'styled-components';
 
 import useCachedResources from 'hooks/useCachedResources';

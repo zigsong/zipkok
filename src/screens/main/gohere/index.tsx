@@ -1,10 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
+import HeaderNavigator from 'screens/header/HeaderNavigator';
 import { ThemedView } from 'components/Themed';
 import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
 import PALETTE from 'styles/palette';
+
+const GoHere = () => <HeaderNavigator component={GoHereScreen} />;
 
 const GoHereScreen = () => {
   return (
@@ -32,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GoHereScreen;
+export default GoHere;

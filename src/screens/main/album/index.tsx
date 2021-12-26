@@ -1,15 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
+import HeaderNavigator from 'screens/header/HeaderNavigator';
 import { ThemedView } from 'components/Themed';
 import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
 import PALETTE from 'styles/palette';
 
-const FriendsInfoScreen = () => {
+const Album = () => <HeaderNavigator component={AlbumScreen} />;
+
+const AlbumScreen = () => {
   return (
     <ThemedView style={styles.container}>
-      <BaseHeader title="친구정보" subtitle="준비중..." />
+      <BaseHeader title="앨범" subtitle="준비중..." />
       <BaseLayout>
         <Text>내용</Text>
       </BaseLayout>
@@ -32,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FriendsInfoScreen;
+export default Album;

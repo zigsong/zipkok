@@ -1,8 +1,9 @@
 import React from 'react';
-import { Image, Pressable, View, TouchableOpacity, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Image, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { BoldText, LightText } from 'components/StyledText';
+import { HeaderNavigationProps } from 'screens/header/HeaderNavigator';
 import settingsIcon from 'assets/images/settings.png';
 import multiSelectIcon from 'assets/images/multi-select.png';
 import PALETTE from 'styles/palette';
@@ -13,6 +14,8 @@ interface Props {
 }
 
 const BaseHeader = ({ title, subtitle }: Props) => {
+  const navigation = useNavigation<HeaderNavigationProps>();
+
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
@@ -20,10 +23,10 @@ const BaseHeader = ({ title, subtitle }: Props) => {
         <LightText style={styles.subtitle}>{subtitle}</LightText>
       </View>
       <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('FriendsList')}>
           <Image source={multiSelectIcon} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Settings')}>
           <Image source={settingsIcon} />
         </TouchableOpacity>
       </View>
