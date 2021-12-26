@@ -7,12 +7,12 @@ import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
 import PALETTE from 'styles/palette';
 
-const Calendar = () => <HeaderNavigator component={CalendarScreen} />;
+const Dday = () => <HeaderNavigator component={DdayScreen} />;
 
-const CalendarScreen = () => {
+const DdayScreen = () => {
   return (
     <ThemedView style={styles.container}>
-      <BaseHeader title="캘린더" subtitle="우리 같이 노는날" />
+      <BaseHeader title="디데이" subtitle="격리해제일까지" />
       <BaseLayout>
         <Text>내용</Text>
       </BaseLayout>
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     textAlign: 'center',
-    color: PALETTE.violet.tint_400,
+    color: PALETTE.green.tint_400,
   },
 });
 
-export default Calendar;
+export default Dday;

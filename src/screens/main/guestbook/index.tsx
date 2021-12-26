@@ -7,12 +7,12 @@ import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
 import PALETTE from 'styles/palette';
 
-const Album = () => <HeaderNavigator component={AlbumScreen} />;
+const Guestbook = () => <HeaderNavigator component={GuestbookScreen} />;
 
-const AlbumScreen = () => {
+const GuestbookScreen = () => {
   return (
     <ThemedView style={styles.container}>
-      <BaseHeader title="앨범" subtitle="준비중..." />
+      <BaseHeader title="방명록" subtitle="준비중..." />
       <BaseLayout>
         <Text>내용</Text>
       </BaseLayout>
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     textAlign: 'center',
-    color: PALETTE.violet.tint_400,
+    color: PALETTE.green.tint_400,
   },
 });
 
-export default Album;
+export default Guestbook;

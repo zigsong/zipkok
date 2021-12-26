@@ -15,14 +15,14 @@ export function ThemedText(props: TextProps) {
 
 export function TintedText(props: TextProps) {
   const { style, ...otherProps } = props;
-  const color = PALETTE.violet.tint_400;
+  const color = PALETTE.green.tint_400;
 
   return <DefaultText style={[{ color }, style]} {...otherProps} />;
 }
 
 export function ThemedView(props: ViewProps) {
   const { style, ...otherProps } = props;
-  const backgroundColor = PALETTE.violet.vintage_400;
+  const backgroundColor = PALETTE.green.bg_400;
 
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
 }

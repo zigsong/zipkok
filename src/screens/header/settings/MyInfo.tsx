@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     height: 124,
     borderWidth: 4,
     borderStyle: 'solid',
-    borderColor: PALETTE.violet.tint_400,
+    borderColor: PALETTE.green.tint_400,
     borderRadius: 75,
   },
   textContainer: {

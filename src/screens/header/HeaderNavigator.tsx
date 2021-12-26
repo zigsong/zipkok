@@ -7,7 +7,6 @@ import {
 } from '@react-navigation/stack';
 
 import SettingsScreen from './settings';
-import FriendsListScreen from './friendsList';
 import gobackIcon from 'assets/images/goback.png';
 import PALETTE from 'styles/palette';
 
@@ -25,8 +24,8 @@ interface Props {
 }
 
 const headerOptions = {
-  headerStyle: { backgroundColor: PALETTE.violet.vintage_400 },
-  headerTintColor: PALETTE.violet.tint_400,
+  headerStyle: { backgroundColor: PALETTE.green.bg_400 },
+  headerTintColor: PALETTE.green.tint_400,
   headerTitleStyle: { fontWeight: 'bold', fontFamily: 'cafe-surround' },
   headerBackTitleVisible: false,
   headerBackImage: () => <Image source={gobackIcon} style={{ marginLeft: 12 }} />,
@@ -40,11 +39,6 @@ const HeaderNavigator = ({ component }: Props) => {
         name="Settings"
         component={SettingsScreen}
         options={{ title: '설정', ...headerOptions }}
-      />
-      <Stack.Screen
-        name="FriendsList"
-        component={FriendsListScreen}
-        options={{ title: '친구목록', ...headerOptions }}
       />
     </Stack.Navigator>
   );

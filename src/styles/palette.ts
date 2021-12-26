@@ -1,8 +1,8 @@
 export default {
-  violet: {
-    vintage_400: '#DFDAE0',
-    vintage_500: 'rgba(107, 86, 171, 0.09)',
-    tint_400: '#7C5983',
+  green: {
+    bg_400: '#C9E4C5',
+    vintage_500: 'rgba(91, 138, 114, 0.24)',
+    tint_400: '#5B8A72',
   },
   white: {
     bg_400: 'rgba(255, 255, 255, 0.59)',

@@ -7,12 +7,12 @@ import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
 import PALETTE from 'styles/palette';
 
-const GoHere = () => <HeaderNavigator component={GoHereScreen} />;
+const Graph = () => <HeaderNavigator component={GraphScreen} />;
 
-const GoHereScreen = () => {
+const GraphScreen = () => {
   return (
     <ThemedView style={styles.container}>
-      <BaseHeader title="여기가자" subtitle="준비중..." />
+      <BaseHeader title="확진자통계" subtitle="준비중..." />
       <BaseLayout>
         <Text>내용</Text>
       </BaseLayout>
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     textAlign: 'center',
-    color: PALETTE.violet.tint_400,
+    color: PALETTE.green.tint_400,
   },
 });
 
-export default GoHere;
+export default Graph;

@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     padding: 24,
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
-    backgroundColor: PALETTE.violet.vintage_500,
+    backgroundColor: PALETTE.green.vintage_500,
   },
 });
 

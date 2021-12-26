@@ -5,8 +5,6 @@ import { useNavigation } from '@react-navigation/native';
 import { BoldText, LightText } from 'components/StyledText';
 import { HeaderNavigationProps } from 'screens/header/HeaderNavigator';
 import settingsIcon from 'assets/images/settings.png';
-import multiSelectIcon from 'assets/images/multi-select.png';
-import PALETTE from 'styles/palette';
 
 interface Props {
   title: string;
@@ -23,9 +21,6 @@ const BaseHeader = ({ title, subtitle }: Props) => {
         <LightText>{subtitle}</LightText>
       </View>
       <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('FriendsList')}>
-          <Image source={multiSelectIcon} />
-        </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Settings')}>
           <Image source={settingsIcon} />
         </TouchableOpacity>

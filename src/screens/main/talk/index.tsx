@@ -7,12 +7,12 @@ import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
 import PALETTE from 'styles/palette';
 
-const Diary = () => <HeaderNavigator component={DiaryScreen} />;
+const Talk = () => <HeaderNavigator component={TalkScreen} />;
 
-const DiaryScreen = () => {
+const TalkScreen = () => {
   return (
     <ThemedView style={styles.container}>
-      <BaseHeader title="교환일기" subtitle="우리만의 비밀 일기장" />
+      <BaseHeader title="이야기" subtitle="준비중..." />
       <BaseLayout>
         <Text>내용</Text>
       </BaseLayout>
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     textAlign: 'center',
-    color: PALETTE.violet.tint_400,
+    color: PALETTE.green.tint_400,
   },
 });
 
-export default Diary;
+export default Talk;
