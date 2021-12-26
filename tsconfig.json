@@ -1,5 +1,4 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
@@ -10,16 +9,17 @@
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
-    "target": "esnext", 
+    "target": "esnext",
     "baseUrl": ".",
     "paths": {
       "*": ["src/*"],
       "@components/*": ["src/components/*"],
-      "@screens/*": ["src/screens/*"],
-    },
+      "@screens/*": ["src/screens/*"]
+    }
   },
   "exclude": [
     "node_modules",
-    "babel.config.js",
-  ]
+    "babel.config.js"
+  ],
+  "extends": "expo/tsconfig.base"
 }
