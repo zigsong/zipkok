@@ -1,17 +1,19 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, Text } from 'react-native';
 
-import { HeaderNavigationProps } from 'screens/header/HeaderNavigator';
+import { ThemedView } from 'components/Themed';
 
 const FriendsListScreen = () => {
-  const navigation = useNavigation<HeaderNavigationProps>();
-
   return (
-    <View>
-      <Text>FriendsList</Text>
-    </View>
+    <ThemedView style={styles.container}>
+      <Text>친구목록</Text>
+    </ThemedView>
   );
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 export default FriendsListScreen;
