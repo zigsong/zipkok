@@ -6,8 +6,8 @@ import {
   StackNavigationProp,
 } from '@react-navigation/stack';
 
-import SettingsScreen from './settings/SettingsScreen';
-import FriendsListScreen from './friendsList/FriendsListScreen';
+import SettingsScreen from './settings';
+import FriendsListScreen from './friendsList';
 import gobackIcon from 'assets/images/goback.png';
 import PALETTE from 'styles/palette';
 

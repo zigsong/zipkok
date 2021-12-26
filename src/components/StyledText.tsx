@@ -7,7 +7,7 @@ export const MonoText = (props: TextProps) => {
 };
 
 export const LightText = (props: TextProps) => {
-  return <ThemedText {...props} style={[props.style, { fontFamily: 'cafe-surround-air' }]} />;
+  return <TintedText {...props} style={[props.style, { fontFamily: 'cafe-surround-air' }]} />;
 };
 
 export const BoldText = (props: TextProps) => {

@@ -20,7 +20,7 @@ const BaseHeader = ({ title, subtitle }: Props) => {
     <View style={styles.container}>
       <View style={styles.titleContainer}>
         <BoldText style={styles.title}>{title}</BoldText>
-        <LightText style={styles.subtitle}>{subtitle}</LightText>
+        <LightText>{subtitle}</LightText>
       </View>
       <View style={styles.buttonsContainer}>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('FriendsList')}>
@@ -47,9 +47,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 32,
-  },
-  subtitle: {
-    color: PALETTE.violet.tint_400,
   },
   buttonsContainer: {
     flexDirection: 'row',
