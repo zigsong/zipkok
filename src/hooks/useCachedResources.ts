@@ -16,6 +16,8 @@ export default function useCachedResources() {
           'space-mono': require('../assets/fonts/SpaceMono-Regular.ttf'),
           'cafe-surround': require('../assets/fonts/Cafe24Ssurround.otf'),
           'cafe-surround-air': require('../assets/fonts/Cafe24Ssurroundair.otf'),
+          pretendard: require('../assets/fonts/Pretendard-Regular.otf'),
+          'pretendard-bold': require('../assets/fonts/Pretendard-Bold.otf'),
         });
 
         await new Promise((resolve) => setTimeout(resolve, 2000));
