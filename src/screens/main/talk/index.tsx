@@ -6,7 +6,6 @@ import { ThemedView } from 'components/Themed';
 import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
 import { TalkContent } from 'types';
-import PALETTE from 'styles/palette';
 import Card from './Card';
 import Tag from './Tag';
 import data from './mock';
@@ -63,14 +62,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 48,
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: 32,
-  },
-  subtitle: {
-    textAlign: 'center',
-    color: PALETTE.green.tint_400,
   },
   tagsContainer: {
     flexDirection: 'row',
