@@ -5,7 +5,8 @@ export default {
     tint_400: '#5B8A72',
   },
   white: {
-    bg_400: 'rgba(255, 255, 255, 0.59)',
+    default_400: '#FFFFFF',
+    bg_400: 'rgba(255, 255, 255, 0.79)',
   },
   grey: {
     text_400: '#AAAAAA',

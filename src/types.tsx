@@ -42,3 +42,14 @@ export interface UserInfoProps {
   nickname: string;
   phoneNumber: PhoneNumber;
 }
+
+export type TalkTag = 'CLOSE_CONTACT' | 'INFECTED' | 'BORED' | 'ILL';
+
+export interface TalkContent {
+  id: string;
+  userId: string;
+  userName: string;
+  date: Date;
+  tags: TalkTag[];
+  content: string;
+}
