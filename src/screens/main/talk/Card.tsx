@@ -8,7 +8,7 @@ import PALETTE from 'styles/palette';
 
 const TAG_CONVERTER: { [key in TalkTag]: string } = {
   CLOSE_CONTACT: '밀접접촉',
-  INFECTED: '확진자',
+  CONFIRMED: '확진자',
   BORED: '심심할때',
   ILL: '아플때',
 };

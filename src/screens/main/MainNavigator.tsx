@@ -7,13 +7,13 @@ import talkIcon from 'assets/images/tabbar-talk.png';
 import talkActiveIcon from 'assets/images/tabbar-talk-active.png';
 import ddayIcon from 'assets/images/tabbar-dday.png';
 import ddayActiveIcon from 'assets/images/tabbar-dday-active.png';
-import graphIcon from 'assets/images/tabbar-graph.png';
-import graphActiveIcon from 'assets/images/tabbar-graph-active.png';
+import chartIcon from 'assets/images/tabbar-chart.png';
+import chartActiveIcon from 'assets/images/tabbar-chart-active.png';
 import guestbookIcon from 'assets/images/tabbar-guestbook.png';
 import guestbookActiveIcon from 'assets/images/tabbar-guestbook-active.png';
 import Talk from './talk';
 import Dday from './d-day';
-import Graph from './graph';
+import Chart from './chart';
 import Guestbook from './guestbook';
 import PALETTE from 'styles/palette';
 
@@ -33,11 +33,11 @@ const routes = [
     screen: Dday,
   },
   {
-    name: 'graph',
-    title: '확진자통계',
-    defautlIcon: graphIcon,
-    activeIcon: graphActiveIcon,
-    screen: Graph,
+    name: 'chart',
+    title: '확진자현황',
+    defautlIcon: chartIcon,
+    activeIcon: chartActiveIcon,
+    screen: Chart,
   },
   {
     name: 'guestbook',

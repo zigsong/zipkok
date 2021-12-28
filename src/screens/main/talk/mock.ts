@@ -15,7 +15,7 @@ const data: TalkContent[] = [
     userId: '2',
     userName: '배고픈 너구리',
     date: new Date(),
-    tags: ['INFECTED', 'BORED'],
+    tags: ['CONFIRMED', 'BORED'],
     content:
       'est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla',
   },
@@ -42,7 +42,7 @@ const data: TalkContent[] = [
     userId: '5',
     userName: '공부하는 하마',
     date: new Date(),
-    tags: ['INFECTED'],
+    tags: ['CONFIRMED'],
     content:
       'ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae',
   },

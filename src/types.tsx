@@ -43,7 +43,7 @@ export interface UserInfoProps {
   phoneNumber: PhoneNumber;
 }
 
-export type TalkTag = 'CLOSE_CONTACT' | 'INFECTED' | 'BORED' | 'ILL';
+export type TalkTag = 'CLOSE_CONTACT' | 'CONFIRMED' | 'BORED' | 'ILL';
 
 export interface TalkContent {
   id: string;
@@ -52,4 +52,13 @@ export interface TalkContent {
   date: Date;
   tags: TalkTag[];
   content: string;
+}
+
+export interface ConfirmedData {
+  domestic: {
+    [key: string]: number;
+  };
+  overseas: {
+    [key: string]: number;
+  };
 }

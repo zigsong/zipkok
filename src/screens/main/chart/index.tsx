@@ -5,14 +5,17 @@ import HeaderNavigator from 'screens/header/HeaderNavigator';
 import { ThemedView } from 'components/Themed';
 import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
+import useConfirmedData from 'hooks/queries/useConfirmedData';
 import PALETTE from 'styles/palette';
 
-const Graph = () => <HeaderNavigator component={GraphScreen} />;
+const Chart = () => <HeaderNavigator component={ChartScreen} />;
 
-const GraphScreen = () => {
+const ChartScreen = () => {
+  const { data } = useConfirmedData();
+
   return (
     <ThemedView style={styles.container}>
-      <BaseHeader title="확진자통계" subtitle="준비중..." />
+      <BaseHeader title="확진자현황" subtitle="준비중..." />
       <BaseLayout>
         <Text>내용</Text>
       </BaseLayout>
@@ -35,4 +38,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Graph;
+export default Chart;
