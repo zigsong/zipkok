@@ -18,6 +18,8 @@ export default function useCachedResources() {
           'cafe-surround-air': require('../assets/fonts/Cafe24Ssurroundair.otf'),
           pretendard: require('../assets/fonts/Pretendard-Regular.otf'),
           'pretendard-bold': require('../assets/fonts/Pretendard-Bold.otf'),
+          'balsamiq-sans': require('../assets/fonts/BalsamiqSans-Regular.otf'),
+          'balsamiq-sans-bold': require('../assets/fonts/BalsamiqSans-Bold.otf'),
         });
 
         await new Promise((resolve) => setTimeout(resolve, 2000));
