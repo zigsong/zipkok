@@ -10,12 +10,12 @@ import SettingsScreen from './settings';
 import gobackIcon from 'assets/images/goback.png';
 import PALETTE from 'styles/palette';
 
-export type RootStackParamList = {
+export type HeaderStackParamList = {
   Settings: undefined;
   FriendsList: undefined;
 };
 
-export type HeaderNavigationProps = StackNavigationProp<RootStackParamList>;
+export type HeaderNavigationProps = StackNavigationProp<HeaderStackParamList>;
 
 const Stack = createStackNavigator();
 

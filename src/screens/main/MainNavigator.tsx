@@ -11,7 +11,7 @@ import chartIcon from 'assets/images/tabbar-chart.png';
 import chartActiveIcon from 'assets/images/tabbar-chart-active.png';
 import guestbookIcon from 'assets/images/tabbar-guestbook.png';
 import guestbookActiveIcon from 'assets/images/tabbar-guestbook-active.png';
-import TalkScreen from './talk';
+import TalkNavigator from './talk';
 import DdayScreen from './d-day';
 import ChartScreen from './chart';
 import GuestbookScreen from './guestbook';
@@ -23,7 +23,7 @@ const routes = [
     title: '이야기',
     defautlIcon: talkIcon,
     activeIcon: talkActiveIcon,
-    screen: TalkScreen,
+    screen: TalkNavigator,
   },
   {
     name: 'd-day',
