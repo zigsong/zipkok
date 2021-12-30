@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Image, TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 
-import HeaderNavigator from 'screens/header/HeaderNavigator';
+import withHeaderNavigator from 'screens/header/HeaderNavigator';
 import { ThemedView } from 'components/Themed';
 import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
@@ -10,8 +10,6 @@ import { BoldText, LightText } from 'components/StyledText';
 import PALETTE from 'styles/palette';
 import blobImg from 'assets/images/blob.png';
 import pencilIcon from 'assets/images/pencil.png';
-
-const Dday = () => <HeaderNavigator component={DdayScreen} />;
 
 const DdayScreen = () => {
   const [isDatePickerVisible, setDatePickerVisible] = useState(false);
@@ -99,4 +97,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Dday;
+export default withHeaderNavigator(DdayScreen);

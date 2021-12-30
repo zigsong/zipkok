@@ -20,7 +20,8 @@ export type HeaderNavigationProps = StackNavigationProp<RootStackParamList>;
 const Stack = createStackNavigator();
 
 interface Props {
-  component: React.ComponentType;
+  // REFACTOR: change any type
+  component: React.ComponentType<any>;
 }
 
 const headerOptions = {
@@ -44,4 +45,9 @@ const HeaderNavigator = ({ component }: Props) => {
   );
 };
 
-export default HeaderNavigator;
+const withHeaderNavigator =
+  <P extends object>(Component: React.ComponentType<P>) =>
+  () =>
+    <HeaderNavigator component={Component} />;
+
+export default withHeaderNavigator;

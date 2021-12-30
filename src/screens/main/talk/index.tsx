@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, FlatList, ListRenderItemInfo } from 'react-native';
 
-import HeaderNavigator from 'screens/header/HeaderNavigator';
+import withHeaderNavigator from 'screens/header/HeaderNavigator';
 import { ThemedView } from 'components/Themed';
 import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
@@ -9,8 +9,6 @@ import { TalkContent } from 'types';
 import Card from './Card';
 import Tag from './Tag';
 import data from './mock';
-
-const Talk = () => <HeaderNavigator component={TalkScreen} />;
 
 const TalkScreen = () => {
   const renderItem = ({ item }: ListRenderItemInfo<TalkContent>) => (
@@ -81,4 +79,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Talk;
+export default withHeaderNavigator(TalkScreen);

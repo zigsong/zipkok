@@ -1,13 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import HeaderNavigator from 'screens/header/HeaderNavigator';
+import withHeaderNavigator from 'screens/header/HeaderNavigator';
 import { ThemedView } from 'components/Themed';
 import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
 import { LightText } from 'components/StyledText';
-
-const Guestbook = () => <HeaderNavigator component={GuestbookScreen} />;
 
 const GuestbookScreen = () => {
   return (
@@ -33,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Guestbook;
+export default withHeaderNavigator(GuestbookScreen);

@@ -11,10 +11,10 @@ import chartIcon from 'assets/images/tabbar-chart.png';
 import chartActiveIcon from 'assets/images/tabbar-chart-active.png';
 import guestbookIcon from 'assets/images/tabbar-guestbook.png';
 import guestbookActiveIcon from 'assets/images/tabbar-guestbook-active.png';
-import Talk from './talk';
-import Dday from './d-day';
-import Chart from './chart';
-import Guestbook from './guestbook';
+import TalkScreen from './talk';
+import DdayScreen from './d-day';
+import ChartScreen from './chart';
+import GuestbookScreen from './guestbook';
 import PALETTE from 'styles/palette';
 
 const routes = [
@@ -23,28 +23,28 @@ const routes = [
     title: '이야기',
     defautlIcon: talkIcon,
     activeIcon: talkActiveIcon,
-    screen: Talk,
+    screen: TalkScreen,
   },
   {
     name: 'd-day',
     title: '디데이',
     defautlIcon: ddayIcon,
     activeIcon: ddayActiveIcon,
-    screen: Dday,
+    screen: DdayScreen,
   },
   {
     name: 'chart',
     title: '확진자현황',
     defautlIcon: chartIcon,
     activeIcon: chartActiveIcon,
-    screen: Chart,
+    screen: ChartScreen,
   },
   {
     name: 'guestbook',
     title: '방명록',
     defautlIcon: guestbookIcon,
     activeIcon: guestbookActiveIcon,
-    screen: Guestbook,
+    screen: GuestbookScreen,
   },
 ];
 

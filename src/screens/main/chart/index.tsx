@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import HeaderNavigator from 'screens/header/HeaderNavigator';
+import withHeaderNavigator from 'screens/header/HeaderNavigator';
 import { ThemedView } from 'components/Themed';
 import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
@@ -10,8 +10,6 @@ import useConfirmedData from 'hooks/queries/useConfirmedData';
 import PALETTE from 'styles/palette';
 import { toMonthDate } from 'utils';
 import ConfirmedChart from './ConfirmedChart';
-
-const Chart = () => <HeaderNavigator component={ChartScreen} />;
 
 const ChartScreen = () => {
   const { data } = useConfirmedData();
@@ -86,4 +84,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Chart;
+export default withHeaderNavigator(ChartScreen);
