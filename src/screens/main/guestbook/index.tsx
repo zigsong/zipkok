@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import HeaderNavigator from 'screens/header/HeaderNavigator';
 import { ThemedView } from 'components/Themed';
 import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
-import PALETTE from 'styles/palette';
+import { LightText } from 'components/StyledText';
 
 const Guestbook = () => <HeaderNavigator component={GuestbookScreen} />;
 
@@ -14,7 +14,9 @@ const GuestbookScreen = () => {
     <ThemedView style={styles.container}>
       <BaseHeader title="방명록" subtitle="준비중..." />
       <BaseLayout>
-        <Text>내용</Text>
+        <View style={styles.innerContainer}>
+          <LightText>준비중...</LightText>
+        </View>
       </BaseLayout>
     </ThemedView>
   );
@@ -25,13 +27,9 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 48,
   },
-  title: {
-    textAlign: 'center',
-    fontSize: 32,
-  },
-  subtitle: {
-    textAlign: 'center',
-    color: PALETTE.green.tint_400,
+  innerContainer: {
+    marginTop: 48,
+    alignItems: 'center',
   },
 });
 
