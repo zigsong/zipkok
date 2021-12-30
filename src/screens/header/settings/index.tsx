@@ -3,8 +3,11 @@ import { StyleSheet, View } from 'react-native';
 
 import { ThemedView } from 'components/Themed';
 import mockUserImage from 'assets/images/mockUser.jpg';
-import MyInfo from './MyInfo';
+import profileIcon from 'assets/images/profile.png';
+import infoIcon from 'assets/images/info.png';
 import { UserInfoProps } from 'types';
+import MyInfo from './MyInfo';
+import Button from './Button';
 
 const mockUser: UserInfoProps = {
   image: mockUserImage,
@@ -16,7 +19,10 @@ const SettingsScreen = () => {
   return (
     <ThemedView style={styles.container}>
       <MyInfo {...mockUser} />
-      <View style={styles.buttonsContainer}></View>
+      <View style={styles.buttonsContainer}>
+        <Button image={profileIcon} text="내 정보 수정" />
+        <Button image={infoIcon} text="문의하기" />
+      </View>
     </ThemedView>
   );
 };
@@ -24,7 +30,8 @@ const SettingsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 60,
+    justifyContent: 'center',
+    bottom: 60,
   },
   buttonsContainer: {
     marginTop: 60,
