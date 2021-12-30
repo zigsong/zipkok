@@ -42,6 +42,7 @@ const WriteScreen = () => {
           onChangeText={setTitle}
           value={title}
           placeholder="글 제목"
+          placeholderTextColor={PALETTE.black.text_900}
         />
         <Text style={styles.tagGuide}>태그 (중복선택 가능) </Text>
         <View style={styles.tagsContainer}>
@@ -64,6 +65,7 @@ const WriteScreen = () => {
           value={content}
           multiline
           placeholder="내용을 입력해주세요"
+          placeholderTextColor={PALETTE.black.text_900}
         />
       </View>
     </ThemedView>
