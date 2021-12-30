@@ -3,6 +3,7 @@ export default {
     bg_400: '#C9E4C5',
     vintage_500: 'rgba(91, 138, 114, 0.24)',
     tint_400: '#5B8A72',
+    placeholder_400: 'rgba(93, 125, 88, 0.6)',
   },
   white: {
     default_400: '#FFFFFF',
