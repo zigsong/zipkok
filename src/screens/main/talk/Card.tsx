@@ -27,7 +27,7 @@ const Card = ({ userName, date, tags, content }: TalkContent) => {
     <View style={styles.container}>
       <View style={styles.topContainer}>
         <View style={styles.tagsContainer}>
-          {tags.map((tag) => (
+          {tags?.map((tag) => (
             <View key={tag} style={styles.tagWrapper}>
               <Tag style={tagStyle} text={TAG_CONVERTER[tag]} selected />
             </View>

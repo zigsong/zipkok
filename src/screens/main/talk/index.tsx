@@ -6,7 +6,9 @@ import WriteScreen from './WriteScreen';
 
 export type TalkStackParamList = {
   Talk: undefined;
-  Write: undefined;
+  Write: {
+    refetchTalks: () => void;
+  };
 };
 
 export type TalkNavigationProps = StackNavigationProp<TalkStackParamList>;

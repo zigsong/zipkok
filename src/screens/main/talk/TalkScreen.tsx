@@ -24,7 +24,7 @@ import { TalkNavigationProps } from '.';
 
 const TalkScreen = () => {
   const navigation = useNavigation<TalkNavigationProps>();
-  const { data } = useLoadTalks();
+  const { data, refetch: refetchTalks } = useLoadTalks();
 
   const renderItem = ({ item }: ListRenderItemInfo<TalkContent>) => (
     <View style={styles.cardWrapper}>
@@ -67,7 +67,10 @@ const TalkScreen = () => {
             keyExtractor={(item) => item.id}
             style={styles.listView}
           ></FlatList>
-          <TouchableOpacity style={styles.addButton} onPress={() => navigation.navigate('Write')}>
+          <TouchableOpacity
+            style={styles.addButton}
+            onPress={() => navigation.navigate('Write', { refetchTalks })}
+          >
             <Image source={addIcon} />
           </TouchableOpacity>
         </View>

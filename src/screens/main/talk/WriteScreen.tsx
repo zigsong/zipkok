@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Pressable } from 'react-native';
 import { StackActions, useNavigation } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { v4 as uuidv4 } from 'uuid';
 
 import { BoldText } from 'components/StyledText';
@@ -9,14 +10,37 @@ import PALETTE from 'styles/palette';
 import usePostTalk from 'hooks/queries/usePostTalk';
 import { TalkTag } from 'types';
 import Tag from './Tag';
-import { TalkNavigationProps } from '.';
+import { TalkNavigationProps, TalkStackParamList } from '.';
 
-const WriteScreen = () => {
+type Props = NativeStackScreenProps<TalkStackParamList, 'Write'>;
+
+const WriteScreen = ({ route }: Props) => {
   const [content, setContent] = useState('');
-  const [tags, setTags] = useState<TalkTag[]>(['CONFIRMED', 'ILL']);
+  const [tags, setTags] = useState<TalkTag[]>([]);
 
   const talkMutation = usePostTalk();
   const navigation = useNavigation<TalkNavigationProps>();
+  const { refetchTalks } = route.params;
+
+  const FB_DELAY_TIME = 1000;
+  const submitTalk = () => {
+    talkMutation.mutate({ userId, userName, content, tags, date });
+    setTimeout(refetchTalks, FB_DELAY_TIME);
+    popScreen();
+  };
+
+  const popScreen = () => {
+    const popAction = StackActions.pop();
+    navigation.dispatch(popAction);
+  };
+
+  const toggleTag = (currentTag: TalkTag) => {
+    if (tags.includes(currentTag)) {
+      setTags((tags) => tags.filter((tag) => tag !== currentTag));
+    } else {
+      setTags((tags) => tags.concat(currentTag));
+    }
+  };
 
   const userId = `uid-${uuidv4()}`;
   const userName = `uname-${uuidv4()}`;
@@ -32,15 +56,6 @@ const WriteScreen = () => {
     },
   };
 
-  const submitTalk = () => {
-    talkMutation.mutate({ userId, userName, content, tags, date });
-  };
-
-  const cancelPost = () => {
-    const popAction = StackActions.pop();
-    navigation.dispatch(popAction);
-  };
-
   return (
     <ThemedView style={styles.container}>
       <View style={styles.topContainer}>
@@ -48,7 +63,7 @@ const WriteScreen = () => {
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
             style={{ ...styles.button, backgroundColor: PALETTE.white.default_400 }}
-            onPress={cancelPost}
+            onPress={popScreen}
           >
             <Text style={{ ...styles.buttonText, color: PALETTE.green.tint_400 }}>취소</Text>
           </TouchableOpacity>
@@ -64,18 +79,18 @@ const WriteScreen = () => {
       <View style={styles.innerContainer}>
         <Text style={styles.tagGuide}>태그 (중복선택 가능)</Text>
         <View style={styles.tagsContainer}>
-          <TouchableOpacity style={styles.tagButton}>
-            <Tag text="밀접접촉" style={tagStyle} selected />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.tagButton}>
-            <Tag text="확진자" style={tagStyle} />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.tagButton}>
-            <Tag text="심심할때" style={tagStyle} />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.tagButton}>
-            <Tag text="아플때" style={tagStyle} />
-          </TouchableOpacity>
+          <Pressable style={styles.tagButton} onPress={() => toggleTag('CLOSE_CONTACT')}>
+            <Tag text="밀접접촉" style={tagStyle} selected={tags.includes('CLOSE_CONTACT')} />
+          </Pressable>
+          <Pressable style={styles.tagButton} onPress={() => toggleTag('CONFIRMED')}>
+            <Tag text="확진자" style={tagStyle} selected={tags.includes('CONFIRMED')} />
+          </Pressable>
+          <Pressable style={styles.tagButton} onPress={() => toggleTag('BORED')}>
+            <Tag text="심심할때" style={tagStyle} selected={tags.includes('BORED')} />
+          </Pressable>
+          <Pressable style={styles.tagButton} onPress={() => toggleTag('ILL')}>
+            <Tag text="아플때" style={tagStyle} selected={tags.includes('ILL')} />
+          </Pressable>
         </View>
         <TextInput
           style={[styles.input, styles.contentInput]}

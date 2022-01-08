@@ -1,4 +1,4 @@
-import { useMutation } from 'react-query';
+import { useMutation, UseQueryOptions } from 'react-query';
 import { AxiosError } from 'axios';
 
 import realTimeApi from 'requests/realTimeApi';
@@ -13,8 +13,8 @@ const postTalk = async (body: TalkRequest) => {
   }
 };
 
-const usePostTalk = () => {
-  return useMutation<void, AxiosError, TalkRequest>(postTalk);
+const usePostTalk = (options?: UseQueryOptions) => {
+  return useMutation<void, AxiosError, TalkRequest>(postTalk, options);
 };
 
 export default usePostTalk;
