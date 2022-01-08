@@ -11,7 +11,7 @@ export type AuthStackParamList = {
 
 export type AuthNavigationProps = StackNavigationProp<AuthStackParamList>;
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<AuthStackParamList>();
 
 const AuthNavigator = () => {
   return (

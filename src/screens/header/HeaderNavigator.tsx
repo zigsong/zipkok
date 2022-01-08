@@ -17,7 +17,7 @@ export type HeaderStackParamList = {
 
 export type HeaderNavigationProps = StackNavigationProp<HeaderStackParamList>;
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<HeaderStackParamList>();
 
 interface Props {
   // REFACTOR: change any type

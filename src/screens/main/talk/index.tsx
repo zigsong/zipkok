@@ -13,7 +13,7 @@ export type TalkStackParamList = {
 
 export type TalkNavigationProps = StackNavigationProp<TalkStackParamList>;
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<TalkStackParamList>();
 
 const TalkNavigator = () => {
   return (
