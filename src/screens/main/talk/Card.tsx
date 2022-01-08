@@ -41,7 +41,7 @@ const Card = ({ userName, date, tags, content }: TalkContent) => {
       </View>
       <View style={styles.divider}></View>
       <View style={styles.bottomContainer}>
-        <Text style={styles.userDateText}>{userName}</Text>
+        <Text style={styles.userDateText}>{userName.slice(0, 10)}</Text>
         <Text style={styles.userDateText}>{toMonthDate(date)}</Text>
       </View>
     </View>

@@ -32,7 +32,6 @@ export class RealTimeApi {
         const data = snapshot.val();
 
         if (data) {
-          console.log('realTime api: ', data);
           resolve(data);
         } else {
           reject(new Error('firebase get error'));
@@ -48,11 +47,11 @@ export class RealTimeApi {
 
       try {
         const updates: Record<string, T> = {};
-        updates[path + newPostKey] = postBody;
+        updates[path + newPostKey] = { id: newPostKey, ...postBody };
 
         return update(ref(db), updates);
       } catch (error) {
-        reject('firebase post error: ' + error);
+        reject(new Error('firebase post error: ' + error));
       }
     });
   }

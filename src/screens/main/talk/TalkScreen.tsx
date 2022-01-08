@@ -14,16 +14,17 @@ import withHeaderNavigator from 'screens/header/HeaderNavigator';
 import { ThemedView } from 'components/Themed';
 import BaseLayout from 'components/BaseLayout';
 import BaseHeader from 'components/BaseHeader';
-import { TalkContent } from 'types';
+import useLoadTalks from 'hooks/queries/useLoadTalks';
 import PALETTE from 'styles/palette';
 import addIcon from 'assets/images/add.png';
+import { TalkContent } from 'types';
 import Card from './Card';
 import Tag from './Tag';
-import data from './mock';
 import { TalkNavigationProps } from '.';
 
 const TalkScreen = () => {
   const navigation = useNavigation<TalkNavigationProps>();
+  const { data } = useLoadTalks();
 
   const renderItem = ({ item }: ListRenderItemInfo<TalkContent>) => (
     <View style={styles.cardWrapper}>
