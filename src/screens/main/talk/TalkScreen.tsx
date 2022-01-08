@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
   listView: {
     marginTop: 24,
     paddingHorizontal: 16,
+    marginVertical: 102,
   },
   cardWrapper: {
     marginBottom: 10,
