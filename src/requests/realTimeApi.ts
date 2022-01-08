@@ -2,6 +2,9 @@ import { FirebaseApp, initializeApp } from 'firebase/app';
 import { child, getDatabase, onValue, push, ref, update } from 'firebase/database';
 import 'firebase/auth';
 
+import { valueof } from 'utils/typeUtils';
+import API_PATH from 'requests/paths';
+
 const databaseURL = 'https://zipkok-52711-default-rtdb.asia-southeast1.firebasedatabase.app';
 
 export class RealTimeApi {
@@ -27,7 +30,9 @@ export class RealTimeApi {
 
       onValue(reference, (snapshot) => {
         const data = snapshot.val();
+
         if (data) {
+          console.log('realTime api: ', data);
           resolve(data);
         } else {
           reject(new Error('firebase get error'));
@@ -36,7 +41,7 @@ export class RealTimeApi {
     });
   }
 
-  public post<T>(path: string, postBody: T): Promise<void> {
+  public post<T>(path: valueof<typeof API_PATH>, postBody: T): Promise<void> {
     return new Promise<void>((_, reject) => {
       const db = getDatabase();
       const newPostKey = push(child(ref(db), path)).key;
