@@ -17,12 +17,14 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ziglab.zipkok"
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#C9E4C5"
-      }
+      },
+      "package": "com.ziglab.zipkok"
     },
     "web": {
       "favicon": "./src/assets/images/icon.png"

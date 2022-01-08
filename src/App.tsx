@@ -13,8 +13,6 @@ import AuthNavigator from 'screens/auth/AuthNavigator';
 
 const queryClient = new QueryClient();
 
-const Stack = createStackNavigator();
-
 const App = () => {
   const isLoadingComplete = useCachedResources();
 
@@ -34,6 +32,8 @@ const App = () => {
     );
   }
 };
+
+const Stack = createStackNavigator();
 
 const AppStack = () => {
   const { isLoggedIn } = useAuth();

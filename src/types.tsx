@@ -49,10 +49,12 @@ export interface TalkContent {
   id: string;
   userId: string;
   userName: string;
-  date: Date;
   tags: TalkTag[];
   content: string;
+  date: Date;
 }
+
+export type TalkRequest = Omit<TalkContent, 'id'>;
 
 export interface ConfirmedData {
   domestic: {

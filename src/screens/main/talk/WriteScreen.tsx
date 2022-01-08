@@ -1,14 +1,26 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
+import { StackActions, useNavigation } from '@react-navigation/native';
+import { v4 as uuidv4 } from 'uuid';
 
 import { BoldText } from 'components/StyledText';
 import { ThemedView } from 'components/Themed';
 import PALETTE from 'styles/palette';
+import usePostTalk from 'hooks/queries/usePostTalk';
+import { TalkTag } from 'types';
 import Tag from './Tag';
+import { TalkNavigationProps } from '.';
 
 const WriteScreen = () => {
-  const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [tags, setTags] = useState<TalkTag[]>(['CONFIRMED', 'ILL']);
+
+  const talkMutation = usePostTalk();
+  const navigation = useNavigation<TalkNavigationProps>();
+
+  const userId = `uid-${uuidv4()}`;
+  const userName = `uname-${uuidv4()}`;
+  const date = new Date();
 
   const tagStyle = {
     text: {
@@ -20,6 +32,15 @@ const WriteScreen = () => {
     },
   };
 
+  const submitTalk = () => {
+    talkMutation.mutate({ userId, userName, content, tags, date });
+  };
+
+  const cancelPost = () => {
+    const popAction = StackActions.pop();
+    navigation.dispatch(popAction);
+  };
+
   return (
     <ThemedView style={styles.container}>
       <View style={styles.topContainer}>
@@ -27,24 +48,21 @@ const WriteScreen = () => {
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
             style={{ ...styles.button, backgroundColor: PALETTE.white.default_400 }}
+            onPress={cancelPost}
           >
             <Text style={{ ...styles.buttonText, color: PALETTE.green.tint_400 }}>취소</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{ ...styles.button, backgroundColor: PALETTE.green.tint_400 }}>
+          <TouchableOpacity
+            style={{ ...styles.button, backgroundColor: PALETTE.green.tint_400 }}
+            onPress={submitTalk}
+          >
             <Text style={{ ...styles.buttonText, color: PALETTE.white.default_400 }}>완료</Text>
           </TouchableOpacity>
         </View>
       </View>
 
       <View style={styles.innerContainer}>
-        <TextInput
-          style={[styles.input, styles.titleInput]}
-          onChangeText={setTitle}
-          value={title}
-          placeholder="글 제목"
-          placeholderTextColor={PALETTE.black.text_900}
-        />
-        <Text style={styles.tagGuide}>태그 (중복선택 가능) </Text>
+        <Text style={styles.tagGuide}>태그 (중복선택 가능)</Text>
         <View style={styles.tagsContainer}>
           <TouchableOpacity style={styles.tagButton}>
             <Tag text="밀접접촉" style={tagStyle} selected />
@@ -92,7 +110,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     margin: 16,
     marginBottom: 104,
-    paddingHorizontal: 12,
+    padding: 12,
     backgroundColor: PALETTE.white.bg_400,
   },
   button: {
@@ -129,11 +147,7 @@ const styles = StyleSheet.create({
     height: 40,
     margin: 12,
     borderWidth: 0,
-    padding: 8,
-  },
-  titleInput: {
-    borderBottomWidth: 1,
-    borderBottomColor: PALETTE.green.tint_400,
+    paddingVertical: 8,
   },
   contentInput: {
     flex: 1,

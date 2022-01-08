@@ -13,7 +13,7 @@ interface Props {
 }
 
 const AuthProvider = ({ children }: Props) => {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(true);
 
   const login = () => {
     setLoggedIn(true);
